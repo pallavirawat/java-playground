@@ -1,6 +1,7 @@
 package LeetCode.longestSubWithoutRep;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class LongestSubWithoutRep {
     public int lengthOfLongestSubstring(String s) {
@@ -40,8 +41,12 @@ public class LongestSubWithoutRep {
 
         int wl=0,wr=1;
 
-        HashMap<Character, Integer> hm = new HashMap<>();
+        Map<Character, Integer> hm = new HashMap<>();
         hm.put(s.charAt(0), 0);
+
+        Map<String, String> m = new HashMap<String, String>();
+        Map<String, String> m2 = new HashMap<String, String>();
+
 
         int maxWindow = 1;
 

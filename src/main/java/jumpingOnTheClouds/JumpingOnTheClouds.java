@@ -1,8 +1,10 @@
 package jumpingOnTheClouds;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 class Result {
 
@@ -26,6 +28,31 @@ class Result {
             jumps+=1;
         }
         return jumps;
+    }
+    public int solution(int[] ints) {
+        // write your code in Java SE 8
+        List<Integer> intList = new ArrayList<Integer>(ints.length);
+        for (int i : ints)
+        { intList.add(i); }
+
+        for (int i :
+                ints) {
+
+        }
+
+        final List<Integer> collect = intList.stream().distinct().sorted().collect(Collectors.toList());
+
+        int smallest = -1;
+        for (int i = 0; i < collect.size(); i++) {
+            if(collect.get(i) > 0){
+                if(i<collect.size()-1){
+                    if(collect.get(i)-collect.get(i+1)>0) return collect.get(i)+1;
+                }
+                else return collect.get(i)+1;
+            }
+        }
+
+        return 1;
     }
 
 }

@@ -31,7 +31,7 @@ class Result {
                 acount++;
             }
         }
-        long remainingStringSize = n%s.length();
+        int remainingStringSize = (int) n % s.length();
 
         acount *= (n/s.length());
 

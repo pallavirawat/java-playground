@@ -2,22 +2,26 @@ package CalculatorWork;
 
 import java.text.DecimalFormat;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Calculator {
-    public String calculate(String input) {
 
+
+    public String calculate(String input) {
         int separationIndex = findIndexOfOperators(input);
+        Integer number = 1;
+        new Integer("23");
 
         if(separationIndex<1){
             return input;
         }
 
-        List<String> numbers = Arrays.asList(input.substring(0, separationIndex).trim().split(" "));
+        final String[] s = input.substring(0, separationIndex).trim().split(" ");
+        List<String> numbers = Arrays.asList(s);
         List<String> operators = Arrays.asList(input.substring(separationIndex).trim().split(" "));
 
         Queue<String> numberStack = new LinkedList<>();
         Queue<String> operatorStack = new LinkedList<>();
-
         for(String str : numbers)
             numberStack.add(str);
 
